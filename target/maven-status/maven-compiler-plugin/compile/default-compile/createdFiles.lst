@@ -1,0 +1,4 @@
+com\mateacademy\db\DbConnector.class
+com\mateacademy\utils\ResourceResolver.class
+com\mateacademy\dao\GenericDao.class
+com\mateacademy\dao\impl\GenericDaoImpl.class

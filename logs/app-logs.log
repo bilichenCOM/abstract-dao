@@ -1,0 +1,306 @@
+2019-06-01 02:14:46 DEBUG QueryExecutor:28 - problems by creating table: model.User...Схема "MODEL" не найдена
+Schema "MODEL" not found; SQL statement:
+CREATE TABLE IF NOT EXISTS model.User ( ID BIGINT AUTO_INCREMENT PRIMARY KEY,lastName VARCHAR, name VARCHAR, age VARCHAR, friends VARCHAR, ); [90079-197]
+2019-06-01 02:14:46 DEBUG QueryExecutor:19 - problems by inserting into table: model.User...Схема "MODEL" не найдена
+Schema "MODEL" not found; SQL statement:
+INSERT INTO model.User ( lastName,name,age,friends ) VALUES ( Hurricane, Johny, 23, [], ); [90079-197]
+2019-06-01 02:18:27 DEBUG QueryExecutor:28 - problems by creating table: User...Метод разрешен только для запросов. Используйте execute или executeUpdate вместо executeQuery
+Method is only allowed for a query. Use execute or executeUpdate instead of executeQuery; SQL statement:
+CREATE TABLE IF NOT EXISTS User ( ID BIGINT AUTO_INCREMENT PRIMARY KEY, lastName VARCHAR, name VARCHAR, age VARCHAR, friends VARCHAR, ); [90002-197]
+2019-06-01 02:18:27 DEBUG QueryExecutor:19 - problems by inserting into table: User...Таблица "USER" не найдена
+Table "USER" not found; SQL statement:
+INSERT INTO User ( lastName,name,age,friends ) VALUES ( Hurricane, Johny, 23, [], ); [42102-197]
+2019-06-01 02:21:03 DEBUG QueryExecutor:66 - query: [CREATE TABLE IF NOT EXISTS User ( ID BIGINT AUTO_INCREMENT PRIMARY KEY, lastName VARCHAR, name VARCHAR, age VARCHAR, friends VARCHAR, );] executed
+2019-06-01 02:21:03 DEBUG QueryExecutor:19 - problems by inserting into table: User...Синтаксическая ошибка в выражении SQL "INSERT INTO USER ( LASTNAME, NAME, AGE, FRIENDS, ) VALUES ( HURRICANE, JOHNY, 23, [[*]], ); "; ожидалось "), DEFAULT, NOT, EXISTS, INTERSECTS, SELECT, FROM, WITH"
+Syntax error in SQL statement "INSERT INTO USER ( LASTNAME, NAME, AGE, FRIENDS, ) VALUES ( HURRICANE, JOHNY, 23, [[*]], ); "; expected "), DEFAULT, NOT, EXISTS, INTERSECTS, SELECT, FROM, WITH"; SQL statement:
+INSERT INTO User ( lastName, name, age, friends, ) VALUES ( Hurricane, Johny, 23, [], ); [42001-197]
+2019-06-01 02:28:18 DEBUG DbConnector:25 - some problems wiht connection...База данных уже используется: null. Возможные решения: закрыть все другие соединения; использовать режим сервера
+Database may be already in use: null. Possible solutions: close all other connection(s); use the server mode [90020-197]
+2019-06-01 02:28:43 DEBUG DbConnector:25 - some problems wiht connection...База данных уже используется: null. Возможные решения: закрыть все другие соединения; использовать режим сервера
+Database may be already in use: null. Possible solutions: close all other connection(s); use the server mode [90020-197]
+2019-06-01 02:29:10 DEBUG QueryExecutor:66 - query: [CREATE TABLE IF NOT EXISTS User ( ID BIGINT AUTO_INCREMENT PRIMARY KEY, lastName VARCHAR, name VARCHAR, age VARCHAR, friends VARCHAR, );] executed
+2019-06-01 02:29:10 DEBUG QueryExecutor:66 - query: [INSERT INTO User ( lastName, name, age, friends, ) VALUES ( 'Hurricane' ,'Johny' ,'23' ,'[]'  );] executed
+2019-06-01 02:31:49 DEBUG QueryExecutor:66 - query: [CREATE TABLE IF NOT EXISTS User ( ID BIGINT AUTO_INCREMENT PRIMARY KEY, lastName VARCHAR, name VARCHAR, age VARCHAR, friends VARCHAR );] executed
+2019-06-01 02:31:49 DEBUG QueryExecutor:66 - query: [INSERT INTO User ( lastName, name, age, friends, ) VALUES ( 'Hurricane' ,'Johny' ,'23' ,'[]'  );] executed
+2019-06-03 08:27:57 DEBUG DbConnector:25 - some problems wiht connection...База данных уже используется: null. Возможные решения: закрыть все другие соединения; использовать режим сервера
+Database may be already in use: null. Possible solutions: close all other connection(s); use the server mode [90020-197]
+2019-06-03 09:48:32 DEBUG QueryExecutor:105 - query: [CREATE TABLE IF NOT EXISTS User ( ID BIGINT AUTO_INCREMENT PRIMARY KEY, lastName VARCHAR, name VARCHAR, age VARCHAR, friends VARCHAR );] executed
+2019-06-03 09:48:32 DEBUG QueryExecutor:105 - query: [INSERT INTO User ( lastName, name, age, friends, ) VALUES ( 'Hurricane' ,'Johny' ,'23' ,'[]' );] executed
+2019-06-03 09:48:50 DEBUG QueryExecutor:105 - query: [CREATE TABLE IF NOT EXISTS User ( ID BIGINT AUTO_INCREMENT PRIMARY KEY, lastName VARCHAR, name VARCHAR, age VARCHAR, friends VARCHAR );] executed
+2019-06-03 09:48:50 DEBUG QueryExecutor:105 - query: [INSERT INTO User ( lastName, name, age, friends, ) VALUES ( 'Hurricane' ,'Johny' ,'23' ,'[]' );] executed
+2019-06-03 09:48:59 DEBUG QueryExecutor:105 - query: [CREATE TABLE IF NOT EXISTS User ( ID BIGINT AUTO_INCREMENT PRIMARY KEY, lastName VARCHAR, name VARCHAR, age VARCHAR, friends VARCHAR );] executed
+2019-06-03 09:48:59 DEBUG QueryExecutor:105 - query: [INSERT INTO User ( lastName, name, age, friends, ) VALUES ( 'Hurricane' ,'Johny' ,'23' ,'[]' );] executed
+2019-06-03 09:49:00 DEBUG QueryExecutor:105 - query: [CREATE TABLE IF NOT EXISTS StringUserModel ( ID BIGINT AUTO_INCREMENT PRIMARY KEY, country VARCHAR, surname VARCHAR, name VARCHAR, language VARCHAR );] executed
+2019-06-03 09:49:00 DEBUG QueryExecutor:105 - query: [INSERT INTO StringUserModel ( country, surname, name, language, ) VALUES ( 'Ukraine' ,'String' ,'Johny' ,'Chinese' );] executed
+2019-06-03 09:52:33 DEBUG DbConnector:25 - some problems wiht connection...База данных уже используется: null. Возможные решения: закрыть все другие соединения; использовать режим сервера
+Database may be already in use: null. Possible solutions: close all other connection(s); use the server mode [90020-197]
+2019-06-03 09:52:33 DEBUG DbConnector:25 - some problems wiht connection...База данных уже используется: null. Возможные решения: закрыть все другие соединения; использовать режим сервера
+Database may be already in use: null. Possible solutions: close all other connection(s); use the server mode [90020-197]
+2019-06-03 09:52:49 DEBUG QueryExecutor:105 - query: [CREATE TABLE IF NOT EXISTS User ( ID BIGINT AUTO_INCREMENT PRIMARY KEY, lastName VARCHAR, name VARCHAR, age VARCHAR, friends VARCHAR );] executed
+2019-06-03 09:52:49 DEBUG QueryExecutor:105 - query: [INSERT INTO User ( lastName, name, age, friends, ) VALUES ( 'Hurricane' ,'Johny' ,'23' ,'[]' );] executed
+2019-06-03 09:52:49 DEBUG QueryExecutor:105 - query: [CREATE TABLE IF NOT EXISTS StringUserModel ( ID BIGINT AUTO_INCREMENT PRIMARY KEY, country VARCHAR, surname VARCHAR, name VARCHAR, language VARCHAR );] executed
+2019-06-03 09:52:49 DEBUG QueryExecutor:105 - query: [INSERT INTO StringUserModel ( country, surname, name, language, ) VALUES ( 'Ukraine' ,'String' ,'Johny' ,'Chinese' );] executed
+2019-06-03 09:52:50 DEBUG QueryExecutor:97 - query: [SELECT country, surname, name, language FROM StringUserModel WHERE id=1;] executed result set retrieved
+2019-06-03 09:52:50 DEBUG QueryExecutor:27 - problems by retrieving from table: StringUserModel with id: 1...Объект уже закрыт
+The object is already closed [90007-197]
+2019-06-03 09:52:50 DEBUG ReflectionUtils:32 - cannot maken an instance of com.mateacademy.test.model.StringUserModel - perhaps no constructor without parameters
+2019-06-03 09:53:52 DEBUG QueryExecutor:105 - query: [CREATE TABLE IF NOT EXISTS User ( ID BIGINT AUTO_INCREMENT PRIMARY KEY, lastName VARCHAR, name VARCHAR, age VARCHAR, friends VARCHAR );] executed
+2019-06-03 09:53:52 DEBUG QueryExecutor:105 - query: [INSERT INTO User ( lastName, name, age, friends, ) VALUES ( 'Hurricane' ,'Johny' ,'23' ,'[]' );] executed
+2019-06-03 09:53:52 DEBUG QueryExecutor:105 - query: [CREATE TABLE IF NOT EXISTS StringUserModel ( ID BIGINT AUTO_INCREMENT PRIMARY KEY, country VARCHAR, surname VARCHAR, name VARCHAR, language VARCHAR );] executed
+2019-06-03 09:53:52 DEBUG QueryExecutor:105 - query: [INSERT INTO StringUserModel ( country, surname, name, language, ) VALUES ( 'Ukraine' ,'String' ,'Johny' ,'Chinese' );] executed
+2019-06-03 09:53:53 DEBUG QueryExecutor:97 - query: [SELECT country, surname, name, language FROM StringUserModel WHERE id=1;] executed result set retrieved
+2019-06-03 09:53:53 DEBUG QueryExecutor:27 - problems by retrieving from table: StringUserModel with id: 1...Объект уже закрыт
+The object is already closed [90007-197]
+2019-06-03 09:53:53 INFO  ReflectionUtils:20 - new instance of com.mateacademy.test.model.StringUserModel is created...
+2019-06-03 09:53:53 INFO  ReflectionUtils:22 - begin to setting fields ...
+2019-06-03 09:53:53 INFO  ReflectionUtils:28 - field name set to value: null
+2019-06-03 09:53:53 INFO  ReflectionUtils:28 - field surname set to value: null
+2019-06-03 09:53:53 INFO  ReflectionUtils:28 - field language set to value: null
+2019-06-03 09:53:53 INFO  ReflectionUtils:28 - field country set to value: null
+2019-06-03 09:55:15 DEBUG QueryExecutor:105 - query: [CREATE TABLE IF NOT EXISTS User ( ID BIGINT AUTO_INCREMENT PRIMARY KEY, lastName VARCHAR, name VARCHAR, age VARCHAR, friends VARCHAR );] executed
+2019-06-03 09:55:15 DEBUG QueryExecutor:105 - query: [INSERT INTO User ( lastName, name, age, friends, ) VALUES ( 'Hurricane' ,'Johny' ,'23' ,'[]' );] executed
+2019-06-03 09:55:15 DEBUG QueryExecutor:105 - query: [CREATE TABLE IF NOT EXISTS StringUserModel ( ID BIGINT AUTO_INCREMENT PRIMARY KEY, country VARCHAR, surname VARCHAR, name VARCHAR, language VARCHAR );] executed
+2019-06-03 09:55:15 DEBUG QueryExecutor:105 - query: [INSERT INTO StringUserModel ( country, surname, name, language, ) VALUES ( 'Ukraine' ,'String' ,'Johny' ,'Chinese' );] executed
+2019-06-03 09:55:15 DEBUG QueryExecutor:97 - query: [SELECT country, surname, name, language FROM StringUserModel WHERE id=1;] executed result set retrieved
+2019-06-03 09:55:15 DEBUG QueryExecutor:27 - problems by retrieving from table: StringUserModel with id: 1...Объект уже закрыт
+The object is already closed [90007-197]
+2019-06-03 09:55:15 INFO  ReflectionUtils:20 - new instance of com.mateacademy.test.model.StringUserModel is created...
+2019-06-03 09:55:15 INFO  ReflectionUtils:22 - begin to setting fields ...
+2019-06-03 09:55:15 INFO  ReflectionUtils:28 - field name set to value: null
+2019-06-03 09:55:15 INFO  ReflectionUtils:28 - field surname set to value: null
+2019-06-03 09:55:15 INFO  ReflectionUtils:28 - field language set to value: null
+2019-06-03 09:55:15 INFO  ReflectionUtils:28 - field country set to value: null
+2019-06-03 10:00:46 DEBUG QueryExecutor:98 - query: [CREATE TABLE IF NOT EXISTS User ( ID BIGINT AUTO_INCREMENT PRIMARY KEY, lastName VARCHAR, name VARCHAR, age VARCHAR, friends VARCHAR );] executed
+2019-06-03 10:00:46 DEBUG QueryExecutor:98 - query: [INSERT INTO User ( lastName, name, age, friends, ) VALUES ( 'Hurricane' ,'Johny' ,'23' ,'[]' );] executed
+2019-06-03 10:00:46 DEBUG QueryExecutor:98 - query: [CREATE TABLE IF NOT EXISTS StringUserModel ( ID BIGINT AUTO_INCREMENT PRIMARY KEY, country VARCHAR, surname VARCHAR, name VARCHAR, language VARCHAR );] executed
+2019-06-03 10:00:46 DEBUG QueryExecutor:98 - query: [INSERT INTO StringUserModel ( country, surname, name, language, ) VALUES ( 'Ukraine' ,'String' ,'Johny' ,'Chinese' );] executed
+2019-06-03 10:00:47 INFO  ReflectionUtils:20 - new instance of com.mateacademy.test.model.StringUserModel is created...
+2019-06-03 10:00:47 INFO  ReflectionUtils:22 - begin to setting fields ...
+2019-06-03 10:00:47 INFO  ReflectionUtils:28 - field name set to value: Johny
+2019-06-03 10:00:47 INFO  ReflectionUtils:28 - field surname set to value: String
+2019-06-03 10:00:47 INFO  ReflectionUtils:28 - field language set to value: Chinese
+2019-06-03 10:00:47 INFO  ReflectionUtils:28 - field country set to value: Ukraine
+2019-06-03 11:02:55 DEBUG DbConnector:25 - some problems wiht connection...База данных уже используется: null. Возможные решения: закрыть все другие соединения; использовать режим сервера
+Database may be already in use: null. Possible solutions: close all other connection(s); use the server mode [90020-197]
+2019-06-03 11:03:19 DEBUG DbConnector:25 - some problems wiht connection...База данных уже используется: null. Возможные решения: закрыть все другие соединения; использовать режим сервера
+Database may be already in use: null. Possible solutions: close all other connection(s); use the server mode [90020-197]
+2019-06-03 11:03:31 DEBUG DbConnector:25 - some problems wiht connection...База данных уже используется: null. Возможные решения: закрыть все другие соединения; использовать режим сервера
+Database may be already in use: null. Possible solutions: close all other connection(s); use the server mode [90020-197]
+2019-06-03 11:08:28 DEBUG DbConnector:25 - some problems wiht connection...База данных уже используется: null. Возможные решения: закрыть все другие соединения; использовать режим сервера
+Database may be already in use: null. Possible solutions: close all other connection(s); use the server mode [90020-197]
+2019-06-03 11:09:10 DEBUG DbConnector:25 - some problems wiht connection...База данных уже используется: null. Возможные решения: закрыть все другие соединения; использовать режим сервера
+Database may be already in use: null. Possible solutions: close all other connection(s); use the server mode [90020-197]
+2019-06-03 11:10:10 DEBUG DbConnector:25 - some problems wiht connection...База данных уже используется: null. Возможные решения: закрыть все другие соединения; использовать режим сервера
+Database may be already in use: null. Possible solutions: close all other connection(s); use the server mode [90020-197]
+2019-06-03 11:12:43 DEBUG DbConnector:25 - some problems wiht connection...База данных уже используется: null. Возможные решения: закрыть все другие соединения; использовать режим сервера
+Database may be already in use: null. Possible solutions: close all other connection(s); use the server mode [90020-197]
+2019-06-03 11:13:40 DEBUG QueryExecutor:108 - query: [CREATE TABLE IF NOT EXISTS StringUserModel ( ID BIGINT AUTO_INCREMENT PRIMARY KEY, country VARCHAR, surname VARCHAR, name VARCHAR, language VARCHAR);] executed
+2019-06-03 11:13:41 DEBUG QueryExecutor:108 - query: [INSERT INTO StringUserModel ( country, surname, name, language, ) VALUES ( 'Ukraine' ,'String' ,'Johny' ,'Chinese' );] executed
+2019-06-03 11:13:41 INFO  ReflectionUtils:20 - new instance of com.mateacademy.test.model.StringUserModel is created...
+2019-06-03 11:13:41 INFO  ReflectionUtils:22 - begin to setting fields ...
+2019-06-03 11:13:41 INFO  ReflectionUtils:28 - field name set to value: Johny
+2019-06-03 11:13:41 INFO  ReflectionUtils:28 - field surname set to value: String
+2019-06-03 11:13:41 INFO  ReflectionUtils:28 - field language set to value: Chinese
+2019-06-03 11:13:41 INFO  ReflectionUtils:28 - field country set to value: Ukraine
+2019-06-04 20:13:25 DEBUG QueryExecutor:121 - query: [CREATE TABLE IF NOT EXISTS StringUserModel (ID BIGINT AUTO_INCREMENT PRIMARY KEY, country VARCHAR, surname VARCHAR, name VARCHAR, language VARCHAR);] executed
+2019-06-04 20:13:25 DEBUG QueryExecutor:121 - query: [INSERT INTO StringUserModel (country, surname, name, language, ) VALUES ('Ukraine', 'String', 'Johny', 'Chinese' );] executed
+2019-06-04 20:17:20 DEBUG QueryExecutor:121 - query: [CREATE TABLE IF NOT EXISTS StringUserModel (ID BIGINT AUTO_INCREMENT PRIMARY KEY, country VARCHAR, surname VARCHAR, name VARCHAR, language VARCHAR);] executed
+2019-06-04 20:17:20 DEBUG QueryExecutor:121 - query: [INSERT INTO StringUserModel (country, surname, name, language, ) VALUES ('Ukraine', 'String', 'Johny', 'Chinese' );] executed
+2019-06-04 20:17:20 INFO  ReflectionUtils:20 - new instance of com.mateacademy.test.model.StringUserModel is created...
+2019-06-04 20:17:20 INFO  ReflectionUtils:22 - begin to setting fields ...
+2019-06-04 20:17:20 INFO  ReflectionUtils:28 - field name set to value: Johny
+2019-06-04 20:17:20 INFO  ReflectionUtils:28 - field surname set to value: String
+2019-06-04 20:17:20 INFO  ReflectionUtils:28 - field language set to value: Chinese
+2019-06-04 20:17:20 INFO  ReflectionUtils:28 - field country set to value: Ukraine
+2019-06-04 20:17:20 DEBUG QueryExecutor:121 - query: [CREATE TABLE IF NOT EXISTS CommonUserModel (ID BIGINT PRIMARY KEY, balance NUMERIC, gender CHAR, name VARCHAR, age INT);] executed
+2019-06-04 20:17:20 DEBUG QueryExecutor:40 - problems by inserting into table: CommonUserModel...Значение NULL не разрешено для поля "ID"
+NULL not allowed for column "ID"; SQL statement:
+INSERT INTO CommonUserModel (balance, gender, name, age, ) VALUES (2.5, 'M', 'Johny', 93 ); [23502-197]
+2019-06-04 20:17:20 INFO  ReflectionUtils:20 - new instance of com.mateacademy.test.model.CommonUserModel is created...
+2019-06-04 20:17:20 INFO  ReflectionUtils:22 - begin to setting fields ...
+2019-06-04 20:17:20 INFO  ReflectionUtils:28 - field name set to value: null
+2019-06-04 20:17:20 INFO  ReflectionUtils:28 - field id set to value: null
+2019-06-04 20:17:20 INFO  ReflectionUtils:28 - field age set to value: null
+2019-06-04 20:17:20 INFO  ReflectionUtils:28 - field balance set to value: null
+2019-06-04 20:17:20 INFO  ReflectionUtils:28 - field gender set to value: null
+2019-06-04 20:23:45 DEBUG QueryExecutor:123 - query: [CREATE TABLE IF NOT EXISTS StringUserModel (ID BIGINT AUTO_INCREMENT PRIMARY KEY, country VARCHAR, surname VARCHAR, name VARCHAR, language VARCHAR);] executed
+2019-06-04 20:23:45 DEBUG QueryExecutor:123 - query: [INSERT INTO StringUserModel (country, surname, name, language ) VALUES ('Ukraine', 'String', 'Johny', 'Chinese' );] executed
+2019-06-04 20:23:45 INFO  QueryExecutor:22 - execute query [SELECT country, surname, name, language FROM StringUserModel WHERE id=1;]
+2019-06-04 20:23:45 INFO  ReflectionUtils:20 - new instance of com.mateacademy.test.model.StringUserModel is created...
+2019-06-04 20:23:45 INFO  ReflectionUtils:22 - begin to setting fields ...
+2019-06-04 20:23:45 INFO  ReflectionUtils:28 - field name set to value: Johny
+2019-06-04 20:23:45 INFO  ReflectionUtils:28 - field surname set to value: String
+2019-06-04 20:23:45 INFO  ReflectionUtils:28 - field language set to value: Chinese
+2019-06-04 20:23:45 INFO  ReflectionUtils:28 - field country set to value: Ukraine
+2019-06-04 20:23:45 DEBUG QueryExecutor:123 - query: [CREATE TABLE IF NOT EXISTS CommonUserModel (ID BIGINT PRIMARY KEY, balance NUMERIC, gender CHAR, name VARCHAR, age INT);] executed
+2019-06-04 20:23:45 DEBUG QueryExecutor:42 - problems by inserting into table: CommonUserModel...Значение NULL не разрешено для поля "ID"
+NULL not allowed for column "ID"; SQL statement:
+INSERT INTO CommonUserModel (balance, gender, name, age ) VALUES (2.5, 'M', 'Johny', 93 ); [23502-197]
+2019-06-04 20:23:45 INFO  QueryExecutor:22 - execute query [SELECT balance, gender, name, id, age FROM CommonUserModel WHERE id=92109;]
+2019-06-04 20:23:45 INFO  ReflectionUtils:20 - new instance of com.mateacademy.test.model.CommonUserModel is created...
+2019-06-04 20:23:45 INFO  ReflectionUtils:22 - begin to setting fields ...
+2019-06-04 20:23:45 INFO  ReflectionUtils:28 - field name set to value: null
+2019-06-04 20:23:45 INFO  ReflectionUtils:28 - field id set to value: null
+2019-06-04 20:23:45 INFO  ReflectionUtils:28 - field age set to value: null
+2019-06-04 20:23:45 INFO  ReflectionUtils:28 - field balance set to value: null
+2019-06-04 20:23:45 INFO  ReflectionUtils:28 - field gender set to value: null
+2019-06-04 20:28:24 DEBUG DbConnector:25 - some problems wiht connection...База данных уже используется: null. Возможные решения: закрыть все другие соединения; использовать режим сервера
+Database may be already in use: null. Possible solutions: close all other connection(s); use the server mode [90020-197]
+2019-06-04 20:28:24 DEBUG DbConnector:25 - some problems wiht connection...База данных уже используется: null. Возможные решения: закрыть все другие соединения; использовать режим сервера
+Database may be already in use: null. Possible solutions: close all other connection(s); use the server mode [90020-197]
+2019-06-04 20:28:39 DEBUG QueryExecutor:126 - query: [CREATE TABLE IF NOT EXISTS StringUserModel (ID BIGINT AUTO_INCREMENT PRIMARY KEY, country VARCHAR, surname VARCHAR, name VARCHAR, language VARCHAR);] executed
+2019-06-04 20:28:40 DEBUG QueryExecutor:126 - query: [INSERT INTO StringUserModel (country, surname, name, language ) VALUES ('Ukraine', 'String', 'Johny', 'Chinese' );] executed
+2019-06-04 20:28:40 INFO  QueryExecutor:22 - execute query [SELECT country, surname, name, language FROM StringUserModel WHERE id=1;]
+2019-06-04 20:28:40 INFO  ReflectionUtils:20 - new instance of com.mateacademy.test.model.StringUserModel is created...
+2019-06-04 20:28:40 INFO  ReflectionUtils:22 - begin to setting fields ...
+2019-06-04 20:28:40 INFO  ReflectionUtils:28 - field name set to value: Johny
+2019-06-04 20:28:40 INFO  ReflectionUtils:28 - field surname set to value: String
+2019-06-04 20:28:40 INFO  ReflectionUtils:28 - field language set to value: Chinese
+2019-06-04 20:28:40 INFO  ReflectionUtils:28 - field country set to value: Ukraine
+2019-06-04 20:28:40 DEBUG QueryExecutor:126 - query: [CREATE TABLE IF NOT EXISTS CommonUserModel (ID BIGINT PRIMARY KEY, balance NUMERIC, gender CHAR, name VARCHAR, age INT);] executed
+2019-06-04 20:28:40 DEBUG QueryExecutor:45 - problems by inserting into table: CommonUserModel...Значение NULL не разрешено для поля "ID"
+NULL not allowed for column "ID"; SQL statement:
+INSERT INTO CommonUserModel (balance, gender, name, age ) VALUES (2.5, 'M', 'Johny', 93 ); [23502-197]
+2019-06-04 20:28:40 INFO  QueryExecutor:22 - execute query [SELECT balance, gender, name, id, age FROM CommonUserModel WHERE id=92109;]
+2019-06-04 20:28:40 INFO  QueryExecutor:30 - row with id 92109 doesn't exists...
+2019-06-04 20:28:40 INFO  ReflectionUtils:20 - new instance of com.mateacademy.test.model.CommonUserModel is created...
+2019-06-04 20:28:40 INFO  ReflectionUtils:22 - begin to setting fields ...
+2019-06-04 20:32:19 DEBUG QueryExecutor:126 - query: [CREATE TABLE IF NOT EXISTS StringUserModel (ID BIGINT AUTO_INCREMENT PRIMARY KEY, country VARCHAR, surname VARCHAR, name VARCHAR, language VARCHAR);] executed
+2019-06-04 20:32:19 DEBUG QueryExecutor:126 - query: [INSERT INTO StringUserModel (country, surname, name, language ) VALUES ('Ukraine', 'String', 'Johny', 'Chinese' );] executed
+2019-06-04 20:34:41 DEBUG QueryExecutor:126 - query: [CREATE TABLE IF NOT EXISTS StringUserModel (ID BIGINT AUTO_INCREMENT PRIMARY KEY, country VARCHAR, surname VARCHAR, name VARCHAR, language VARCHAR);] executed
+2019-06-04 20:35:39 DEBUG QueryExecutor:126 - query: [INSERT INTO StringUserModel (country, surname, name, language ) VALUES ('Ukraine', 'String', 'Johny', 'Chinese' );] executed
+2019-06-04 20:35:43 INFO  QueryExecutor:22 - execute query [SELECT country, surname, name, language FROM StringUserModel WHERE id=1;]
+2019-06-04 20:35:43 INFO  ReflectionUtils:20 - new instance of com.mateacademy.test.model.StringUserModel is created...
+2019-06-04 20:35:43 INFO  ReflectionUtils:22 - begin to setting fields ...
+2019-06-04 20:35:43 INFO  ReflectionUtils:28 - field name set to value: Johny
+2019-06-04 20:35:43 INFO  ReflectionUtils:28 - field surname set to value: String
+2019-06-04 20:35:43 INFO  ReflectionUtils:28 - field language set to value: Chinese
+2019-06-04 20:35:43 INFO  ReflectionUtils:28 - field country set to value: Ukraine
+2019-06-04 20:35:43 DEBUG QueryExecutor:126 - query: [CREATE TABLE IF NOT EXISTS CommonUserModel (ID BIGINT PRIMARY KEY, balance NUMERIC, gender CHAR, name VARCHAR, age INT);] executed
+2019-06-04 20:36:31 DEBUG QueryExecutor:45 - problems by inserting into table: CommonUserModel...Значение NULL не разрешено для поля "ID"
+NULL not allowed for column "ID"; SQL statement:
+INSERT INTO CommonUserModel (balance, gender, name, age ) VALUES (2.5, 'M', 'Johny', 93 ); [23502-197]
+2019-06-04 20:36:35 INFO  QueryExecutor:22 - execute query [SELECT balance, gender, name, id, age FROM CommonUserModel WHERE id=92109;]
+2019-06-04 20:36:35 INFO  QueryExecutor:30 - row with id 92109 doesn't exists...
+2019-06-04 20:36:35 INFO  ReflectionUtils:20 - new instance of com.mateacademy.test.model.CommonUserModel is created...
+2019-06-04 20:36:35 INFO  ReflectionUtils:22 - begin to setting fields ...
+2019-06-04 20:47:09 DEBUG QueryExecutor:125 - query: [CREATE TABLE IF NOT EXISTS StringUserModel (ID BIGINT PRIMARY KEY, country VARCHAR, surname VARCHAR, name VARCHAR, language VARCHAR);] executed
+2019-06-04 20:47:36 DEBUG QueryExecutor:125 - query: [INSERT INTO StringUserModel (country, surname, name, language ) VALUES ('Ukraine', 'String', 'Johny', 'Chinese' );] executed
+2019-06-04 20:48:07 INFO  QueryExecutor:22 - execute query [SELECT country, surname, name, language FROM StringUserModel WHERE id=1;]
+2019-06-04 20:49:14 DEBUG QueryExecutor:125 - query: [CREATE TABLE IF NOT EXISTS StringUserModel (ID BIGINT PRIMARY KEY, country VARCHAR, surname VARCHAR, name VARCHAR, language VARCHAR);] executed
+2019-06-04 20:49:21 DEBUG QueryExecutor:125 - query: [INSERT INTO StringUserModel (country, surname, name, language ) VALUES ('Ukraine', 'String', 'Johny', 'Chinese' );] executed
+2019-06-04 20:49:21 INFO  QueryExecutor:22 - execute query [SELECT country, surname, name, language FROM StringUserModel WHERE id=1;]
+2019-06-04 20:49:22 INFO  ReflectionUtils:20 - new instance of com.mateacademy.test.model.StringUserModel is created...
+2019-06-04 20:49:22 INFO  ReflectionUtils:22 - begin to setting fields ...
+2019-06-04 20:49:22 INFO  ReflectionUtils:28 - field name set to value: Johny
+2019-06-04 20:49:22 INFO  ReflectionUtils:28 - field surname set to value: String
+2019-06-04 20:49:22 INFO  ReflectionUtils:28 - field language set to value: Chinese
+2019-06-04 20:49:22 INFO  ReflectionUtils:28 - field country set to value: Ukraine
+2019-06-04 20:49:22 DEBUG QueryExecutor:125 - query: [CREATE TABLE IF NOT EXISTS CommonUserModel (balance NUMERIC, gender CHAR, name VARCHAR, id BIGINT PRIMARY KEY, age INT);] executed
+2019-06-04 20:49:38 DEBUG QueryExecutor:125 - query: [INSERT INTO CommonUserModel (balance, gender, name, id, age ) VALUES (2.5, 'M', 'Johny', 92109, 93 );] executed
+2019-06-04 20:49:38 INFO  QueryExecutor:22 - execute query [SELECT balance, gender, name, id, age FROM CommonUserModel WHERE id=92109;]
+2019-06-04 20:49:38 INFO  ReflectionUtils:20 - new instance of com.mateacademy.test.model.CommonUserModel is created...
+2019-06-04 20:49:38 INFO  ReflectionUtils:22 - begin to setting fields ...
+2019-06-04 20:49:38 INFO  ReflectionUtils:28 - field name set to value: Johny
+2019-06-04 20:49:38 INFO  ReflectionUtils:28 - field id set to value: 92109
+2019-06-04 20:49:38 INFO  ReflectionUtils:28 - field age set to value: 93
+2019-06-04 20:52:49 DEBUG QueryExecutor:125 - query: [CREATE TABLE IF NOT EXISTS CommonUserModel (balance NUMERIC, gender CHAR, name VARCHAR, id BIGINT PRIMARY KEY, age INT);] executed
+2019-06-04 20:53:09 DEBUG QueryExecutor:45 - problems by inserting into table: CommonUserModel...Нарушение уникального индекса или первичного ключа: "PRIMARY KEY ON PUBLIC.COMMONUSERMODEL(ID)"
+Unique index or primary key violation: "PRIMARY KEY ON PUBLIC.COMMONUSERMODEL(ID)"; SQL statement:
+INSERT INTO CommonUserModel (balance, gender, name, id, age ) VALUES (2.5, 'M', 'Johny', 92109, 93 ); [23505-197]
+2019-06-04 20:53:22 INFO  QueryExecutor:22 - execute query [SELECT balance, gender, name, id, age FROM CommonUserModel WHERE id=92109;]
+2019-06-04 20:53:29 INFO  ReflectionUtils:20 - new instance of com.mateacademy.test.model.CommonUserModel is created...
+2019-06-04 20:53:29 INFO  ReflectionUtils:22 - begin to setting fields ...
+2019-06-04 20:58:27 DEBUG QueryExecutor:125 - query: [CREATE TABLE IF NOT EXISTS CommonUserModel (balance NUMERIC, gender CHAR, name VARCHAR, id BIGINT PRIMARY KEY, age INT);] executed
+2019-06-04 20:58:39 DEBUG QueryExecutor:45 - problems by inserting into table: CommonUserModel...Нарушение уникального индекса или первичного ключа: "PRIMARY KEY ON PUBLIC.COMMONUSERMODEL(ID)"
+Unique index or primary key violation: "PRIMARY KEY ON PUBLIC.COMMONUSERMODEL(ID)"; SQL statement:
+INSERT INTO CommonUserModel (balance, gender, name, id, age ) VALUES (2.5, 'M', 'Johny', 92109, 93 ); [23505-197]
+2019-06-04 20:58:39 INFO  QueryExecutor:22 - execute query [SELECT balance, gender, name, id, age FROM CommonUserModel WHERE id=92109;]
+2019-06-04 21:04:06 DEBUG QueryExecutor:125 - query: [CREATE TABLE IF NOT EXISTS CommonUserModel (balance NUMERIC(10, 4), gender CHAR, name VARCHAR, id BIGINT PRIMARY KEY, age INT);] executed
+2019-06-04 21:04:06 DEBUG QueryExecutor:45 - problems by inserting into table: CommonUserModel...Нарушение уникального индекса или первичного ключа: "PRIMARY KEY ON PUBLIC.COMMONUSERMODEL(ID)"
+Unique index or primary key violation: "PRIMARY KEY ON PUBLIC.COMMONUSERMODEL(ID)"; SQL statement:
+INSERT INTO CommonUserModel (balance, gender, name, id, age ) VALUES (2.5, 'M', 'Johny', 92109, 93 ); [23505-197]
+2019-06-04 21:04:06 INFO  QueryExecutor:22 - execute query [SELECT balance, gender, name, id, age FROM CommonUserModel WHERE id=92109;]
+2019-06-04 21:06:20 DEBUG QueryExecutor:125 - query: [CREATE TABLE IF NOT EXISTS CommonUserModel (balance NUMERIC(10, 4), gender CHAR, name VARCHAR, id BIGINT PRIMARY KEY, age INT);] executed
+2019-06-04 21:06:20 DEBUG QueryExecutor:125 - query: [INSERT INTO CommonUserModel (balance, gender, name, id, age ) VALUES (2.5, 'M', 'Johny', 883, 93 );] executed
+2019-06-04 21:06:21 INFO  QueryExecutor:22 - execute query [SELECT balance, gender, name, id, age FROM CommonUserModel WHERE id=883;]
+2019-06-04 21:08:46 DEBUG QueryExecutor:125 - query: [CREATE TABLE IF NOT EXISTS CommonUserModel (balance REAL, gender CHAR, name VARCHAR, id BIGINT PRIMARY KEY, age INT);] executed
+2019-06-04 21:08:46 DEBUG QueryExecutor:125 - query: [INSERT INTO CommonUserModel (balance, gender, name, id, age ) VALUES (2.5, 'M', 'Johny', 803, 93 );] executed
+2019-06-04 21:08:46 INFO  QueryExecutor:22 - execute query [SELECT balance, gender, name, id, age FROM CommonUserModel WHERE id=803;]
+2019-06-04 21:12:19 INFO  ReflectionUtils:20 - new instance of com.mateacademy.test.model.CommonUserModel is created...
+2019-06-04 21:12:19 INFO  ReflectionUtils:22 - begin to setting fields ...
+2019-06-04 21:18:18 DEBUG QueryExecutor:125 - query: [CREATE TABLE IF NOT EXISTS CommonUserModel (balance REAL, gender CHAR, name VARCHAR, id BIGINT PRIMARY KEY, age INT);] executed
+2019-06-04 21:18:18 DEBUG QueryExecutor:125 - query: [INSERT INTO CommonUserModel (balance, gender, name, id, age ) VALUES (2.5, 'M', 'Johny', 395, 93 );] executed
+2019-06-04 21:18:18 INFO  QueryExecutor:22 - execute query [SELECT balance, gender, name, id, age FROM CommonUserModel WHERE id=395;]
+2019-06-04 21:18:35 INFO  ReflectionUtils:21 - new instance of com.mateacademy.test.model.CommonUserModel is created...
+2019-06-04 21:18:35 INFO  ReflectionUtils:23 - begin to setting fields ...
+2019-06-04 21:18:54 INFO  ReflectionUtils:35 - field name set to value: Johny
+2019-06-04 21:19:00 INFO  ReflectionUtils:35 - field id set to value: 395
+2019-06-04 21:19:04 INFO  ReflectionUtils:35 - field age set to value: 93
+2019-06-04 21:20:12 DEBUG QueryExecutor:125 - query: [CREATE TABLE IF NOT EXISTS CommonUserModel (balance REAL, gender CHAR, name VARCHAR, id BIGINT PRIMARY KEY, age INT);] executed
+2019-06-04 21:20:12 DEBUG QueryExecutor:125 - query: [INSERT INTO CommonUserModel (balance, gender, name, id, age ) VALUES (2.5, 'M', 'Johny', 212, 93 );] executed
+2019-06-04 21:20:12 INFO  QueryExecutor:22 - execute query [SELECT balance, gender, name, id, age FROM CommonUserModel WHERE id=212;]
+2019-06-04 21:20:13 INFO  ReflectionUtils:21 - new instance of com.mateacademy.test.model.CommonUserModel is created...
+2019-06-04 21:20:13 INFO  ReflectionUtils:23 - begin to setting fields ...
+2019-06-04 21:20:18 INFO  ReflectionUtils:35 - field name set to value: Johny
+2019-06-04 21:20:22 INFO  ReflectionUtils:35 - field id set to value: 212
+2019-06-04 21:20:23 INFO  ReflectionUtils:35 - field age set to value: 93
+2019-06-04 21:21:14 INFO  ReflectionUtils:21 - new instance of com.mateacademy.test.model.CommonUserModel is created...
+2019-06-04 21:21:15 INFO  ReflectionUtils:23 - begin to setting fields ...
+2019-06-04 21:21:29 INFO  ReflectionUtils:35 - field name set to value: Johny
+2019-06-04 21:21:32 INFO  ReflectionUtils:35 - field id set to value: 212
+2019-06-04 21:21:33 INFO  ReflectionUtils:35 - field age set to value: 93
+2019-06-04 21:21:54 INFO  ReflectionUtils:35 - field balance set to value: 2.5
+2019-06-04 21:31:54 DEBUG QueryExecutor:127 - query: [CREATE TABLE IF NOT EXISTS CommonUserModel (balance REAL, gender CHAR, name VARCHAR, id BIGINT PRIMARY KEY, age INT);] executed
+2019-06-04 21:31:55 DEBUG QueryExecutor:127 - query: [INSERT INTO CommonUserModel (balance, gender, name, id, age ) VALUES (2.5, 'M', 'Johny', 908, 93 );] executed
+2019-06-04 21:31:55 INFO  QueryExecutor:22 - execute query [SELECT balance, gender, name, id, age FROM CommonUserModel WHERE id=908;]
+2019-06-04 21:31:55 INFO  ReflectionUtils:20 - new instance of com.mateacademy.test.model.CommonUserModel is created...
+2019-06-04 21:31:55 INFO  ReflectionUtils:22 - begin to setting fields ...
+2019-06-04 21:31:55 INFO  ReflectionUtils:28 - field name set to value: Johny
+2019-06-04 21:31:55 INFO  ReflectionUtils:28 - field id set to value: 908
+2019-06-04 21:31:55 INFO  ReflectionUtils:28 - field age set to value: 93
+2019-06-04 21:31:55 INFO  ReflectionUtils:28 - field balance set to value: 2.5
+2019-06-04 22:08:09 DEBUG QueryExecutor:125 - query: [CREATE TABLE IF NOT EXISTS CommonUserModel (balance REAL, gender CHAR, name VARCHAR, id BIGINT PRIMARY KEY, age INT);] executed
+2019-06-04 22:08:09 DEBUG QueryExecutor:125 - query: [INSERT INTO CommonUserModel (balance, gender, name, id, age ) VALUES (2.5, 'M', 'Johny', 822, 93 );] executed
+2019-06-04 22:08:09 INFO  QueryExecutor:22 - execute query [SELECT balance, gender, name, id, age FROM CommonUserModel WHERE id=822;]
+2019-06-04 22:08:09 INFO  ReflectionUtils:21 - new instance of com.mateacademy.test.model.CommonUserModel is created...
+2019-06-04 22:08:09 INFO  ReflectionUtils:23 - begin to setting fields ...
+2019-06-04 22:09:45 DEBUG QueryExecutor:125 - query: [CREATE TABLE IF NOT EXISTS CommonUserModel (balance REAL, gender CHAR, name VARCHAR, id BIGINT PRIMARY KEY, age INT);] executed
+2019-06-04 22:09:46 DEBUG QueryExecutor:125 - query: [INSERT INTO CommonUserModel (balance, gender, name, id, age ) VALUES (2.5, 'M', 'Johny', 229, 93 );] executed
+2019-06-04 22:09:46 INFO  QueryExecutor:22 - execute query [SELECT balance, gender, name, id, age FROM CommonUserModel WHERE id=229;]
+2019-06-04 22:09:46 INFO  ReflectionUtils:21 - new instance of com.mateacademy.test.model.CommonUserModel is created...
+2019-06-04 22:09:46 INFO  ReflectionUtils:23 - begin to setting fields ...
+2019-06-04 22:11:31 DEBUG QueryExecutor:125 - query: [CREATE TABLE IF NOT EXISTS CommonUserModel (balance REAL, gender CHAR, name VARCHAR, id BIGINT PRIMARY KEY, age INT);] executed
+2019-06-04 22:11:31 DEBUG QueryExecutor:125 - query: [INSERT INTO CommonUserModel (balance, gender, name, id, age ) VALUES (2.5, 'M', 'Johny', 929, 93 );] executed
+2019-06-04 22:11:31 INFO  QueryExecutor:22 - execute query [SELECT balance, gender, name, id, age FROM CommonUserModel WHERE id=929;]
+2019-06-04 22:11:31 INFO  ReflectionUtils:21 - new instance of com.mateacademy.test.model.CommonUserModel is created...
+2019-06-04 22:11:31 INFO  ReflectionUtils:23 - begin to setting fields ...
+2019-06-04 22:13:16 DEBUG QueryExecutor:125 - query: [CREATE TABLE IF NOT EXISTS CommonUserModel (balance REAL, gender CHAR, name VARCHAR, id BIGINT PRIMARY KEY, age INT);] executed
+2019-06-04 22:13:17 DEBUG QueryExecutor:125 - query: [INSERT INTO CommonUserModel (balance, gender, name, id, age ) VALUES (2.5, 'M', 'Johny', 647, 93 );] executed
+2019-06-04 22:13:17 INFO  QueryExecutor:22 - execute query [SELECT balance, gender, name, id, age FROM CommonUserModel WHERE id=647;]
+2019-06-04 22:13:17 INFO  ReflectionUtils:21 - new instance of com.mateacademy.test.model.CommonUserModel is created...
+2019-06-04 22:13:17 INFO  ReflectionUtils:23 - begin to setting fields ...
+2019-06-04 22:14:48 DEBUG QueryExecutor:125 - query: [CREATE TABLE IF NOT EXISTS CommonUserModel (balance REAL, gender CHAR, name VARCHAR, id BIGINT PRIMARY KEY, age INT);] executed
+2019-06-04 22:14:49 DEBUG QueryExecutor:125 - query: [INSERT INTO CommonUserModel (balance, gender, name, id, age ) VALUES (2.5, 'M', 'Johny', 976, 93 );] executed
+2019-06-04 22:14:49 INFO  QueryExecutor:22 - execute query [SELECT balance, gender, name, id, age FROM CommonUserModel WHERE id=976;]
+2019-06-04 22:14:49 INFO  ReflectionUtils:21 - new instance of com.mateacademy.test.model.CommonUserModel is created...
+2019-06-04 22:14:49 INFO  ReflectionUtils:23 - begin to setting fields ...
+2019-06-04 22:14:59 INFO  ReflectionUtils:43 - field name set to value: Johny
+2019-06-04 22:15:07 INFO  ReflectionUtils:43 - field id set to value: 976
+2019-06-04 22:15:17 INFO  ReflectionUtils:43 - field age set to value: 93
+2019-06-04 22:15:30 INFO  ReflectionUtils:43 - field balance set to value: 2.5
+2019-06-04 22:15:46 INFO  ReflectionUtils:43 - field gender set to value: M
+2019-06-04 22:20:39 DEBUG DbConnector:25 - some problems wiht connection...База данных уже используется: null. Возможные решения: закрыть все другие соединения; использовать режим сервера
+Database may be already in use: null. Possible solutions: close all other connection(s); use the server mode [90020-197]
+2019-06-04 22:20:57 DEBUG DbConnector:25 - some problems wiht connection...База данных уже используется: null. Возможные решения: закрыть все другие соединения; использовать режим сервера
+Database may be already in use: null. Possible solutions: close all other connection(s); use the server mode [90020-197]
+2019-06-04 22:21:15 DEBUG QueryExecutor:125 - query: [CREATE TABLE IF NOT EXISTS CommonUserModel (balance REAL, gender CHAR(1), name VARCHAR, id BIGINT PRIMARY KEY, age INT);] executed
+2019-06-04 22:21:15 DEBUG QueryExecutor:125 - query: [INSERT INTO CommonUserModel (balance, gender, name, id, age ) VALUES (2.5, 'M', 'Johny', 116, 93 );] executed
+2019-06-04 22:21:15 INFO  QueryExecutor:22 - execute query [SELECT balance, gender, name, id, age FROM CommonUserModel WHERE id=116;]
+2019-06-04 22:21:15 INFO  ReflectionUtils:21 - new instance of com.mateacademy.test.model.CommonUserModel is created...
+2019-06-04 22:21:15 INFO  ReflectionUtils:23 - begin to setting fields ...
+2019-06-04 22:22:41 INFO  ReflectionUtils:45 - field name set to value: Johny
+2019-06-04 22:22:48 INFO  ReflectionUtils:45 - field id set to value: 116
+2019-06-04 22:22:54 INFO  ReflectionUtils:45 - field age set to value: 93
+2019-06-04 22:23:03 INFO  ReflectionUtils:45 - field balance set to value: 2.5
+2019-06-04 22:23:12 INFO  ReflectionUtils:45 - field gender set to value: M
