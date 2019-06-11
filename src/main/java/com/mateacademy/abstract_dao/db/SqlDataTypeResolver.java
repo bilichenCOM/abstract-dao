@@ -1,8 +1,8 @@
-package com.mateacademy.db;
+package com.mateacademy.abstract_dao.db;
 
 import java.util.Optional;
 
-import com.mateacademy.dim.SqlTypeAnalog;
+import com.mateacademy.abstract_dao.dim.SqlTypeAnalog;
 
 public class SqlDataTypeResolver {
 

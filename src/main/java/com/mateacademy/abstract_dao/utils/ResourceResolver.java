@@ -1,4 +1,4 @@
-package com.mateacademy.utils;
+package com.mateacademy.abstract_dao.utils;
 
 import java.io.BufferedReader;
 import java.io.IOException;

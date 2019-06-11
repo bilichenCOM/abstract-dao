@@ -1,4 +1,4 @@
-package com.mateacademy.utils;
+package com.mateacademy.abstract_dao.utils;
 
 import java.lang.reflect.Field;
 import java.math.BigDecimal;
@@ -23,29 +23,13 @@ public class ReflectionUtils {
 			logger.info("begin to setting fields ...");
 			for (Field field:fields) {
 				String fieldName = field.getName();
-				Object value = properties.get(fieldName);
-
-				// in some cases data types retrieved from database is not compatible
-				// so it must be checked and casted, if necessary
-				if (field.getType() != value.getClass()) {
-					if (field.getType() == Double.class) {
-						if (value instanceof BigDecimal) {
-							BigDecimal bigDecimal = (BigDecimal) value;
-							value = bigDecimal.doubleValue();
-						}
-					} else if (field.getType() == Character.class) {
-						if (value instanceof String) {
-							String string = (String) value;
-							value = string.toCharArray()[0];
-						}
-					}
-				}
+				Object value = validateValue(field, properties.get(fieldName));
 				field.setAccessible(true);
 				field.set(t, value);
 				logger.info(String.format("field %s set to value: %s", fieldName, value));
 			}
 		} catch (InstantiationException e) {
-			logger.debug("cannot maken an instance of " + clazz.getName() + " - perhaps no constructor without parameters");
+			logger.debug("cannot make an instance of " + clazz.getName() + " - perhaps no constructor without parameters");
 		} catch (IllegalAccessException e) {
 			logger.debug("illegal access to field");
 		}
@@ -74,5 +58,26 @@ public class ReflectionUtils {
 				}});
 
 		return fieldsMap;
+	}
+
+	@SuppressWarnings("unchecked")
+	private static <T> T validateValue(Field field, Object value) {
+		if (field.getType() != value.getClass()) {
+			if (field.getType() == Double.class) {
+				if (value instanceof BigDecimal) {
+					BigDecimal bigDecimalValue = (BigDecimal) value;
+					value = bigDecimalValue.doubleValue();
+				} else if (value instanceof Float) {
+					Float floatValue = (Float) value;
+					value = floatValue.doubleValue();
+				}
+			} else if (field.getType() == Character.class) {
+				if (value instanceof String) {
+					String string = (String) value;
+					value = string.toCharArray()[0];
+				}
+			}
+		}
+		return (T) value;
 	}
 }

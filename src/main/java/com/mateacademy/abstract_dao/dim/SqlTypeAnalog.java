@@ -1,4 +1,4 @@
-package com.mateacademy.dim;
+package com.mateacademy.abstract_dao.dim;
 
 public enum SqlTypeAnalog {
 
@@ -8,7 +8,7 @@ public enum SqlTypeAnalog {
 	BOOLEAN("BOOLEAN"),
 	INTEGER("INT"),
 	FLOAT("FLOAT(8)"),
-	DOUBLE("REAL"),
+	DOUBLE("NUMERIC(10, 4)"),
 	LONG("BIGINT"),
 
 	STRING("VARCHAR");

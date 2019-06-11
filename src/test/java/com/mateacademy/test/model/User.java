@@ -7,13 +7,11 @@ public class User {
 	private String name;
 	private String lastName;
 	private Integer age;
-	private List<User> friends;
 
 	public User(String name, String lastName, Integer age, List<User> friends) {
 		this.name = name;
 		this.lastName = lastName;
 		this.age = age;
-		this.friends = friends;
 	}
 
 	public String getName() {
@@ -40,20 +38,11 @@ public class User {
 		this.age = age;
 	}
 
-	public List<User> getFriends() {
-		return friends;
-	}
-
-	public void setFriends(List<User> friends) {
-		this.friends = friends;
-	}
-
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
 		result = prime * result + ((age == null) ? 0 : age.hashCode());
-		result = prime * result + ((friends == null) ? 0 : friends.hashCode());
 		result = prime * result + ((lastName == null) ? 0 : lastName.hashCode());
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		return result;
@@ -73,11 +62,6 @@ public class User {
 				return false;
 		} else if (!age.equals(other.age))
 			return false;
-		if (friends == null) {
-			if (other.friends != null)
-				return false;
-		} else if (!friends.equals(other.friends))
-			return false;
 		if (lastName == null) {
 			if (other.lastName != null)
 				return false;
@@ -93,6 +77,6 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [name=" + name + ", lastName=" + lastName + ", age=" + age + ", friends=" + friends + "]";
+		return "User [name=" + name + ", lastName=" + lastName + ", age=" + age + "]";
 	}
 }

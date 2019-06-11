@@ -1,9 +1,11 @@
-package com.mateacademy.db;
+package com.mateacademy.abstract_dao.db;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -13,9 +15,40 @@ public class QueryExecutor {
 
 	private static final Logger logger = Logger.getLogger(QueryExecutor.class);
 
+	public static List<Map<String, Object>> retrieveAll(String tableName, Set<String> columns) {
+		List<Map<String, Object>> list = new ArrayList<>();
+		String sql = buildSelectAllQuery(tableName, columns);
+
+		try (Connection connection = DbConnector.getConnection()) {
+			logger.info(String.format("execute query [%s]", sql));
+			ResultSet resultSet = connection.createStatement().executeQuery(sql);
+
+			while (resultSet.next()) {
+				Map<String, Object> properties = new HashMap<>();
+				for (String column:columns) {
+					properties.put(column, resultSet.getObject(column));
+				}
+				list.add(properties);
+			}
+		} catch (SQLException e) {
+			logger.debug("problems by getting all rows from table: " + tableName + " " + e.getMessage());
+		}
+		
+		return list;
+	}
+
+	public static <ID> void update(String tableName, Map<String, Object> properties) {
+		String sql = buildUpdateQuery(tableName, properties);
+		try {
+			executeSql(sql);
+		} catch (SQLException e) {
+			logger.debug("problems with updating in table:" + tableName);
+		}
+	}
+
 	public static <ID> Map<String, Object> retrieve(String tableName, Set<String> columns, ID id) {
 		Map<String, Object> properties = new HashMap<>();
-		String sql = buildSelectQuery(tableName, columns, id);
+		String sql = buildSelectByIdQuery(tableName, columns, id);
 
 		try (Connection connection = DbConnector.getConnection()) {
 
@@ -55,7 +88,52 @@ public class QueryExecutor {
 		}
 	}
 
-	private static <ID> String buildSelectQuery(String tableName, Set<String> columns, ID id) {
+	public static <ID> void delete(String tableName, ID id) {
+		String sql = buildeDeleteQuery(tableName, id);
+		try {
+			executeSql(sql);
+		} catch (SQLException e) {
+			logger.debug("problems by deleting from table: " + tableName);
+		}
+	}
+
+	private static String buildSelectAllQuery(String tableName, Set<String> columns) {
+		StringBuilder sql = new StringBuilder();
+		sql.append("SELECT ");
+		columns.stream().forEach(c -> sql.append(String.format("%s, ", c)));
+		sql.delete(sql.length() - 2, sql.length() - 1);
+		sql.append(String.format("FROM %s", tableName));
+		return sql.toString();
+	}
+
+	private static <ID> String buildeDeleteQuery(String tableName, ID id) {
+		StringBuilder sql = new StringBuilder();
+		sql.append(String.format("DELETE FROM %s ", tableName));
+		if (SqlDataTypeResolver.isQuotesNeeded(id)) {
+			sql.append(String.format("WHERE id = '%s'", id));
+		} else {
+			sql.append(String.format("WHERE id = %s", id));
+		}
+		return sql.toString();
+	}
+
+	private static <ID> String buildUpdateQuery(String tableName, Map<String, Object> properties) {
+		StringBuilder sql = new StringBuilder();
+		sql.append(String.format("UPDATE %s ", tableName));
+		sql.append("SET ");
+		for (String key:properties.keySet()) {
+			Object value = properties.get(key);
+			if (SqlDataTypeResolver.isQuotesNeeded(value)) {
+				sql.append(String.format("%s = '%s', ", key, value));
+			} else {
+				sql.append(String.format("%s = %s, ", key, value));
+			}
+		}
+		sql.delete(sql.length() - 2, sql.length());
+		return sql.toString();
+	}
+
+	private static <ID> String buildSelectByIdQuery(String tableName, Set<String> columns, ID id) {
 		StringBuilder sql = new StringBuilder();
 		sql.append("SELECT ");
 		columns.stream().forEach(c -> sql.append(c + ", "));
@@ -101,7 +179,7 @@ public class QueryExecutor {
 		sql.append(tableName + " (");
 
 		if (!properties.containsKey("id")) {
-			sql.append("ID BIGINT PRIMARY KEY, ");
+			sql.append("ID BIGINT PRIMARY KEY AUTO_INCREMENT, ");
 		}
 
 		for (String column : properties.keySet()) {

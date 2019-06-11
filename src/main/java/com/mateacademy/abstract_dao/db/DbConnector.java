@@ -1,4 +1,4 @@
-package com.mateacademy.db;
+package com.mateacademy.abstract_dao.db;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 import org.apache.log4j.Logger;
 
-import com.mateacademy.utils.ResourceResolver;
+import com.mateacademy.abstract_dao.utils.ResourceResolver;
 
 public class DbConnector {
 
