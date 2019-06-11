@@ -62,6 +62,7 @@ public class ReflectionUtils {
 
 	@SuppressWarnings("unchecked")
 	private static <T> T validateValue(Field field, Object value) {
+		if (value == null) { return null; }
 		if (field.getType() != value.getClass()) {
 			if (field.getType() == Double.class) {
 				if (value instanceof BigDecimal) {

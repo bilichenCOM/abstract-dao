@@ -1,4 +1,4 @@
-package com.mateacademy.test.dao;
+package com.mateacademy.abstract_dao.test.dao;
 
 import java.util.ArrayList;
 
@@ -6,9 +6,9 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import com.mateacademy.abstract_dao.dao.impl.GenericDaoImpl;
-import com.mateacademy.test.model.CommonUserModel;
-import com.mateacademy.test.model.StringUserModel;
-import com.mateacademy.test.model.User;
+import com.mateacademy.abstract_dao.test.model.CommonUserModel;
+import com.mateacademy.abstract_dao.test.model.StringUserModel;
+import com.mateacademy.abstract_dao.test.model.User;
 
 public class GenericDaoImplTest {
 
@@ -33,7 +33,7 @@ public class GenericDaoImplTest {
 	@Test
 	public void saveWithCommonDataTypes() {
 		GenericDaoImpl<CommonUserModel, Long> daoImpl = new GenericDaoImpl<>(CommonUserModel.class);
-		Long id = (long) (Math.random() * 1000);
+		Long id = 1002L;
 		CommonUserModel commonUserModel = new CommonUserModel("Johny", id, 93, 2.5, 'M');
 		daoImpl.save(commonUserModel);
 		CommonUserModel commonUserModel2 = daoImpl.get(commonUserModel.getId());
@@ -46,5 +46,23 @@ public class GenericDaoImplTest {
 		GenericDaoImpl<CommonUserModel, Long> daoImpl = new GenericDaoImpl<>(CommonUserModel.class);
 		Assert.assertNotEquals(0, daoImpl.getAll().size());
 		daoImpl.getAll().forEach(System.out::println);
+	}
+
+	@Test
+	public void updateTest() {
+		GenericDaoImpl<CommonUserModel, Long> daoImpl = new GenericDaoImpl<>(CommonUserModel.class);
+		CommonUserModel userModel = new CommonUserModel();
+		userModel.setId(36L);
+		userModel.setName("Modified");
+		userModel.setAge(33);
+		userModel.setBalance(1000.0);
+		daoImpl.update(userModel);
+		Assert.assertEquals(1000.0, daoImpl.get(36L).getBalance(), 0);
+	}
+
+	@Test
+	public void delete() {
+		GenericDaoImpl<CommonUserModel, Long> daoImpl = new GenericDaoImpl<>(CommonUserModel.class);
+		daoImpl.delete(1000L);
 	}
 }

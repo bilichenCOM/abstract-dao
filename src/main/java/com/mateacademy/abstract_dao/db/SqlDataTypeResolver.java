@@ -32,6 +32,10 @@ public class SqlDataTypeResolver {
 	}
 
 	public static boolean isQuotesNeeded(Object obj) {
+		if (obj == null) {
+			return false;
+		}
+
 		String sqlDataType = resolveSqlTypeFor(obj).orElseThrow(
 				() -> new IllegalArgumentException("unexpected datatype: " + obj.getClass().getTypeName()));
 

@@ -42,7 +42,7 @@ public class QueryExecutor {
 		try {
 			executeSql(sql);
 		} catch (SQLException e) {
-			logger.debug("problems with updating in table:" + tableName);
+			logger.debug("problems with updating in table: " + tableName + "  " + e.getMessage());
 		}
 	}
 
@@ -122,6 +122,7 @@ public class QueryExecutor {
 		sql.append(String.format("UPDATE %s ", tableName));
 		sql.append("SET ");
 		for (String key:properties.keySet()) {
+			if (key == "id") { continue; }
 			Object value = properties.get(key);
 			if (SqlDataTypeResolver.isQuotesNeeded(value)) {
 				sql.append(String.format("%s = '%s', ", key, value));
@@ -129,7 +130,12 @@ public class QueryExecutor {
 				sql.append(String.format("%s = %s, ", key, value));
 			}
 		}
-		sql.delete(sql.length() - 2, sql.length());
+		sql.delete(sql.length() - 2, sql.length() - 1);
+		if (SqlDataTypeResolver.isQuotesNeeded(properties.get("id"))) {
+			sql.append(String.format("WHERE id = '%s'", properties.get("id")));
+		} else {
+			sql.append(String.format("WHERE id = %s", properties.get("id")));
+		}
 		return sql.toString();
 	}
 

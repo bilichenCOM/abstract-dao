@@ -1,4 +1,4 @@
-package com.mateacademy.test.utils;
+package com.mateacademy.abstract_dao.test.utils;
 
 import org.junit.Assert;
 import org.junit.Test;

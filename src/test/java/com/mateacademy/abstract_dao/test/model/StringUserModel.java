@@ -1,4 +1,4 @@
-package com.mateacademy.test.model;
+package com.mateacademy.abstract_dao.test.model;
 
 /*
  * this model was generated to test GenericDaoImpl
