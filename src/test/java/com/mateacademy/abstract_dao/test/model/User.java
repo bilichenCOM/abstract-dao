@@ -2,6 +2,9 @@ package com.mateacademy.abstract_dao.test.model;
 
 import java.util.List;
 
+import com.mateacademy.abstract_dao.annotations.Tabelle;
+
+@Tabelle("users")
 public class User {
 
 	private String name;

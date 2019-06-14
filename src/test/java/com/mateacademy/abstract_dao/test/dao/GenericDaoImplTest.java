@@ -57,6 +57,9 @@ public class GenericDaoImplTest {
 		userModel.setAge(33);
 		userModel.setBalance(1000.0);
 		daoImpl.update(userModel);
+		if (daoImpl.get(36L).getBalance() == null) {
+			Assert.fail();
+		}
 		Assert.assertEquals(1000.0, daoImpl.get(36L).getBalance(), 0);
 	}
 

@@ -1,5 +1,8 @@
 package com.mateacademy.abstract_dao.test.model;
 
+import com.mateacademy.abstract_dao.annotations.Tabelle;
+
+@Tabelle("common_user_model")
 public class CommonUserModel {
 
 	private String name;

@@ -61,7 +61,7 @@ public class QueryExecutor {
 				}
 			} else {
 				logger.info("row with id " + id + " doesn't exists...");
-				return null;
+				return properties;
 			}
 		} catch (SQLException e) {
 			logger.debug(

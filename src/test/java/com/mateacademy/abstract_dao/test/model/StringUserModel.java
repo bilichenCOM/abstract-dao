@@ -1,11 +1,14 @@
 package com.mateacademy.abstract_dao.test.model;
 
+import com.mateacademy.abstract_dao.annotations.Tabelle;
+
 /*
  * this model was generated to test GenericDaoImpl
  * here should be only fields of type String
  * to test instance creation
  */
 
+@Tabelle("string_user_model")
 public class StringUserModel {
 
 	private String name;
