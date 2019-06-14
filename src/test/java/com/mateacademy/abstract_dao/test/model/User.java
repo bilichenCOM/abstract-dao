@@ -2,13 +2,16 @@ package com.mateacademy.abstract_dao.test.model;
 
 import java.util.List;
 
+import com.mateacademy.abstract_dao.annotations.Spalte;
 import com.mateacademy.abstract_dao.annotations.Tabelle;
 
-@Tabelle("users")
+@Tabelle("users_1")
 public class User {
 
 	private String name;
 	private String lastName;
+
+	@Spalte("alter")
 	private Integer age;
 
 	public User(String name, String lastName, Integer age, List<User> friends) {

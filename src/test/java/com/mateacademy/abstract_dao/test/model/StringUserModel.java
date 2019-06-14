@@ -1,5 +1,6 @@
 package com.mateacademy.abstract_dao.test.model;
 
+import com.mateacademy.abstract_dao.annotations.Spalte;
 import com.mateacademy.abstract_dao.annotations.Tabelle;
 
 /*
@@ -8,12 +9,14 @@ import com.mateacademy.abstract_dao.annotations.Tabelle;
  * to test instance creation
  */
 
-@Tabelle("string_user_model")
+@Tabelle("string_user_model_1")
 public class StringUserModel {
 
 	private String name;
 	private String surname;
 	private String language;
+
+	@Spalte("location")
 	private String country;
 
 	public StringUserModel() {

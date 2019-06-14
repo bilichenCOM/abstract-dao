@@ -1,12 +1,15 @@
 package com.mateacademy.abstract_dao.test.model;
 
+import com.mateacademy.abstract_dao.annotations.Spalte;
 import com.mateacademy.abstract_dao.annotations.Tabelle;
 
-@Tabelle("common_user_model")
+@Tabelle("common_user_model_1")
 public class CommonUserModel {
 
 	private String name;
 	private Long id;
+
+	@Spalte("alter")
 	private Integer age;
 	private Double balance;
 	private Character gender;
